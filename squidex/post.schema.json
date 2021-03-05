@@ -1,0 +1,68 @@
+{
+  "properties": {
+      "validateOnPublish": false
+  },
+  "scripts": {
+      "create": "var data = ctx.data;\n    \n            if (data.title && data.title.iv) {\n                data.slug = { iv: slugify(data.title.iv) };\n\n                replace(data);\n            }",
+      "update": "var data = ctx.data;\n    \n            if (data.title && data.title.iv) {\n                data.slug = { iv: slugify(data.title.iv) };\n\n                replace(data);\n            }"
+  },
+  "fieldsInLists": [],
+  "fieldsInReferences": [],
+  "fields": [
+      {
+          "name": "title",
+          "properties": {
+              "isRequired": false,
+              "isRequiredOnPublish": false,
+              "isHalfWidth": false,
+              "fieldType": "String",
+              "editor": "Input",
+              "inlineEditable": false,
+              "isUnique": false,
+              "contentType": "Unspecified"
+          },
+          "isLocked": false,
+          "isHidden": false,
+          "isDisabled": false,
+          "partitioning": "invariant"
+      },
+      {
+          "name": "body",
+          "properties": {
+              "isRequired": false,
+              "isRequiredOnPublish": false,
+              "isHalfWidth": false,
+              "fieldType": "String",
+              "editor": "Input",
+              "inlineEditable": false,
+              "isUnique": false,
+              "contentType": "Unspecified"
+          },
+          "isLocked": false,
+          "isHidden": false,
+          "isDisabled": false,
+          "partitioning": "invariant"
+      },
+      {
+          "name": "slug",
+          "properties": {
+              "isRequired": false,
+              "isRequiredOnPublish": false,
+              "isHalfWidth": false,
+              "fieldType": "String",
+              "editor": "Slug",
+              "inlineEditable": false,
+              "isUnique": false,
+              "contentType": "Unspecified",
+              "label": "",
+              "hints": "",
+              "placeholder": ""
+          },
+          "isLocked": false,
+          "isHidden": false,
+          "isDisabled": false,
+          "partitioning": "invariant"
+      }
+  ],
+  "isPublished": true
+}
