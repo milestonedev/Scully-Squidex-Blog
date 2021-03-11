@@ -7,8 +7,8 @@ This is an (extremely) simple starter for a blog that is an Angular site driven 
 ### Squidex Setup
 1. Create an account with Squidex (or login)
 2. Add your app as a "New Blog Sample"
-3. Go to Settings > Clients > default 
-   1. Create a client if none exists
+3. Go to Settings > Clients 
+   1. Create a client named 'default'
    2. Copy your App Name and Client Secret and place them in the .env.dev files. Your app name is the portion of the client id before the colon.
 
 ### Angular
