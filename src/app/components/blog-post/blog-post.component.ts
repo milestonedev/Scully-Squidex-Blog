@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Post } from 'src/app/models/Post.model';
+import { Post } from 'src/app/models/post.model';
 import { ContentBackendService } from 'src/app/services/content-backend.service';
 
 @Component({
@@ -21,7 +21,7 @@ this.postSlug = this.route.snapshot.paramMap.get("postSlug");
     this.contentService.getContentBySlug(this.postSlug).subscribe(
       result => {
         const post:Post = result;
-        this.body = post.data.body.iv;
+        this.body = post.data.text.iv;
         this.title = post.data.title.iv;
       }
     );

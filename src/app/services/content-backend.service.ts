@@ -5,7 +5,7 @@ import { HttpHeaders, HttpClient } from "@angular/common/http";
 import { map, switchMap, take, tap } from "rxjs/operators";
 import { Observable } from "rxjs/internal/Observable";
 import { isScullyGenerated, TransferStateService } from "@scullyio/ng-lib";
-import { Post } from '../models/Post.model';
+import { Post } from '../models/post.model';
 
 @Injectable({
   providedIn: "root",
@@ -41,13 +41,14 @@ export class ContentBackendService {
       return this.transferStateService.getState(urlHash);
     }
 
-    return this.http.get(requestUri).pipe(
-      map(this.extractData),
+    return this.http.get<any>(requestUri).pipe(
       map((data: any) =>
-        data.items.filter((item: Post) => item.data.slug.iv === slug)
+        data.items.find((item: Post) => item.data.slug.iv === slug)
       ),
-      map((items) => items[0]),
-      tap(result => { this.transferStateService.setState(urlHash, result)})
+      tap(result => {
+        this.transferStateService.setState(urlHash, result);
+
+      })
     );
   }
 }

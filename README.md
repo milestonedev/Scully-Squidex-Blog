@@ -5,14 +5,11 @@ This is an (extremely) simple starter for a blog that is an Angular site driven 
 
 ## Getting Started
 ### Squidex Setup
-1. Create an account with Squidex
-2. Create your app w/ Squidex
-3. Add a new Schema
-   1. Call it 'posts'
-   2. Use the 'import schema' option and paste the Json from '/squidex/post.schema.json'
-4. Create at least 1 new post under the 'Content' blade
-5. Go to Settings > Clients > default 
-   1. Copy your App Name and Client Secret and place them in the .env.dev files. Your app name is the portion of the client id before the colon.
+1. Create an account with Squidex (or login)
+2. Add your app as a "New Blog Sample"
+3. Go to Settings > Clients > default 
+   1. Create a client if none exists
+   2. Copy your App Name and Client Secret and place them in the .env.dev files. Your app name is the portion of the client id before the colon.
 
 ### Angular
 1. Open the site in your preferred editor
